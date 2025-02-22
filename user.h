@@ -40,7 +40,6 @@ public:
         string insertQuery = "INSERT INTO users (username, password, preferences) VALUES ('" +
                              username + "', '" + password + "', '" + preferences + "')";
         if (db.executeQuery(insertQuery)) {
-            cout << "User  registered successfully!" << endl;
             return true; // Indicate success
         } else {
             cout << "Error registering user: " << mysql_error(db.conn) << endl;
