@@ -27,11 +27,13 @@ int main() {
             case 1: {
                 string username, password, preferences;
                 cout << "Username: ";
-                cin >> username;
+                cin.ignore(); 
+   			    getline(cin, username);
                 cout << "Password: ";
                 cin >> password;
-                cout << "Preferences: ";
-                cin >> preferences;
+                cout << "Preferences (e.g., legal, financial, personal): ";
+    			cin.ignore(); // Clear the input buffer
+   			    getline(cin, preferences); // Use getline to allow spaces in preferences
 
                 User newUser (username, password, preferences);
                 if (newUser .registerUser (db)) {
@@ -60,13 +62,14 @@ int main() {
             case 3: {
    				 string title, type, tags, filePath;
    				 cout << "Document Title: ";
-   				 cin >> title;
-   				 cout << "Document Type: ";
-   				 cin >> type;
-    			 cout << "Tags: ";
-    			 cin >> tags;
-    			 cout << "File Path: ";
-   				 cin >> filePath;
+    			 cin.ignore(); 
+    			 getline(cin, title); 
+    			 cout << "Document Type (e.g., PDF, DOCX): ";
+    			 getline(cin, type); 
+    			 cout << "Tags (e.g., legal, contract): ";
+                 getline(cin, tags); 
+                 cout << "File Path (e.g., /path/to/document.pdf): ";
+                 getline(cin, filePath); 
 
     Document doc(title, type, tags, filePath);
     if (doc.saveToDatabase(db.conn)) { // Ensure this matches the method name
@@ -78,9 +81,10 @@ int main() {
 }
             case 4: {
                 string keyword;
-                cout << "Enter Search Keyword: ";
-                cin >> keyword;
-
+                cout << "Enter Search Keyword (title, tags, or category): ";
+   			    cin.ignore(); // Clear the input buffer
+  			    getline(cin, keyword); // Use getline to allow spaces in the keyword
+                
                 auto results = Document::search(db, keyword);
                 cout << "Search Results:\n";
                 for (const auto& result : results) {
