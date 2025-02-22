@@ -26,7 +26,6 @@ public:
         string query = "INSERT INTO categories (name) VALUES ('" + name + "')";
         try {
             db.executeQuery(query); // Use the executeQuery method from Database class
-            cout << "Category created successfully!" << endl;
             return true; // Indicate success
         } catch (const runtime_error& e) {
             cout << "Error creating category: " << e.what() << endl;
