@@ -39,7 +39,6 @@ public:
             cerr << "Error inserting document: " << mysql_error(conn) << endl;
             return false; // Indicate failure
         } else {
-            cout << "Document saved successfully!" << endl;
             return true; // Indicate success
         }
     }
