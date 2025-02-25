@@ -1,36 +1,79 @@
-# Automated Document Management System (DMS)
+# Document Management System
 
-## Description
-The Automated Document Management System (DMS) is designed to help individuals manage their documents efficiently by automatically categorizing, tagging, and storing them based on their content. The system offers powerful search and indexing capabilities for easy document retrieval, alongside lifecycle management features to ensure proper archiving and deletion of documents over time.
+A C++ application for managing documents with MySQL database integration. This system allows users to create, view, search, and manage documents with expiration dates.
 
-## Key Features
-- **Document Categorization and Tagging**: Automatically categorizes documents (e.g., legal, financial) and tags them based on their content.
-- **Document Search and Indexing**: 
-  - Full-Text Search: Allows searching through the entire content of documents.
-  - Advanced Filters: Filter documents by type, category, tags, or creation date.
-  - Search Suggestions: Real-time suggestions and auto-complete as you search.
-  - Metadata Search: Search documents based on metadata like author or creation date.
-- **Document Lifecycle Management**: 
-  - Archiving: Automatically archives documents based on their age or category.
-  - Retention Policies: Define rules for how long documents are kept (e.g., financial records for 7 years).
-  - Automatic Deletion: Automatically deletes documents when they reach the end of their lifecycle.
-  - Reminders: Sends reminders to review documents before deletion or archiving.
-- **Document Upload & OCR**: Users can upload documents, and the system automatically categorizes them. OCR scans and extracts text from scanned documents for easy searchability.
+## Features
 
-## Tech Stack
-- **C++ (OOP)**: For implementing the core application logic, including file handling, categorization, and interactions with the database.
-- **MySQL**: For storing document metadata (e.g., title, tags, date) and other related information in a structured manner.
-- **SQL**: For querying and manipulating data within the MySQL database.
-- **C++ MySQL Connector**: A library (e.g., MySQL Connector/C++) to connect C++ with MySQL for database operations.
+- **Document Creation**: Add new documents with title, category, tags, file path, and retention period
+- **Document Viewing**: Browse all documents stored in the database
+- **Document Searching**: Search for documents by title, category, tags, or upload date
+- **Automatic Expiration**: Track document expiration dates based on retention periods
+- **Expired Document Management**: Review and delete expired documents
 
-## Installation Instructions
-1. **Set Up Development Environment**:
-   - Install a C++ compiler (e.g., GCC for Linux, MinGW for Windows).
-   - Install MySQL (Community Edition).
-   - Install MySQL C++ Connector to enable C++ to interact with MySQL.
-   - Use an IDE like Visual Studio, Code::Blocks, or CLion for easier development.
+## Prerequisites
 
-2. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/ChauhanSaumya/document-management-system.git
+- C++ compiler
+- MySQL server
+- MySQL Connector/C++ library
+
+## Installation
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/document-management-system.git
    cd document-management-system
+   ```
+
+2. Set up the MySQL database:
+   ```sql
+   CREATE DATABASE document_management;
+   USE document_management;
+   
+   CREATE TABLE documents (
+     id INT AUTO_INCREMENT PRIMARY KEY,
+     title VARCHAR(255) NOT NULL,
+     category VARCHAR(100) NOT NULL,
+     tags VARCHAR(255),
+     upload_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+     expiration_date DATETIME NOT NULL,
+     file_path VARCHAR(255) NOT NULL
+   );
+   ```
+
+3. Update database connection details in `Database.h`:
+   ```cpp
+   conn = mysql_real_connect(conn, "localhost", "your_username", "your_password", "document_management", 3306, NULL, 0);
+   ```
+
+4. Compile the program:
+   ```
+   g++ -o document_manager main.cpp -lmysqlclient
+   ```
+
+## Usage
+
+Run the compiled program:
+```
+./document_manager
+```
+
+The main menu provides the following options:
+1. Create a Document
+2. View Documents
+3. Delete Expired Documents
+4. Search Documents
+5. Exit
+
+## File Structure
+
+- `main.cpp`: Main program logic and menu system
+- `Database.h`: Database connection and query handling
+- `Document.h`: Document class with methods for document operations
+
+## License
+
+[Add your license information here]
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
