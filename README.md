@@ -30,14 +30,14 @@ The **Automated Document Management System** is a C++ application designed to ma
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/document-management-system.git
+   git clone https://github.com/ChauhanSaumya/document-management-system.git
    cd document-management-system
 
 ## Installation
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/document-management-system.git
+   git clone https://github.com/ChauhanSaumya/document-management-system.git
    cd document-management-system
    ```
 
