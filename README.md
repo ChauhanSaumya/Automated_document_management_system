@@ -68,10 +68,10 @@ The **Automated Document Management System** is a C++ application designed to ma
    ```
 
 ## Usage
-Create a Document: Select the option to create a document and provide the required details.
-View Documents: Choose the option to view all documents stored in the database.
-Delete Expired Documents: The system will prompt you to delete any documents that have expired.
-Search Documents: Use the search functionality to find documents based on specific criteria.
+- Create a Document: Select the option to create a document and provide the required details.
+- View Documents: Choose the option to view all documents stored in the database.
+- Delete Expired Documents: The system will prompt you to delete any documents that have expired.
+- Search Documents: Use the search functionality to find documents based on specific criteria.
 
 The main menu provides the following options:
 1. Create a Document
