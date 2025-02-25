@@ -1,20 +1,37 @@
-# Document Management System
+# Automated Document Management System
 
-A C++ application for managing documents with MySQL database integration. This system allows users to create, view, search, and manage documents with expiration dates.
+## Overview
+
+The **Automated Document Management System** is a C++ application designed to manage documents efficiently. This project utilizes Object-Oriented Programming (OOP) principles, including classes and objects, to create a robust system for document storage, retrieval, automated deletion and management. The system is linked to a MySQL database, allowing for persistent storage of documents and their metadata.
 
 ## Features
 
-- **Document Creation**: Add new documents with title, category, tags, file path, and retention period
-- **Document Viewing**: Browse all documents stored in the database
-- **Document Searching**: Search for documents by title, category, tags, or upload date
-- **Automatic Expiration**: Track document expiration dates based on retention periods
-- **Expired Document Management**: Review and delete expired documents
+- **Create Documents**: Users can create new documents by providing details such as title, category, tags, file path, and retention period.
+- **View Documents**: Users can view all stored documents along with their details.
+- **Delete Expired Documents**: The system automatically identifies and allows users to delete documents that have expired based on their retention period.
+- **Search Documents**: Users can search for documents based on various criteria, including title, category, tags, and upload date.
+- **Database Integration**: The application is integrated with a MySQL database for persistent storage of documents.
 
-## Prerequisites
+## Technologies Used
 
-- C++ compiler
-- MySQL server
+- C++
+- MySQL
+- OOP Concepts (Classes, Objects, Inheritance, Encapsulation)
+
+## Getting Started
+
+### Prerequisites
+
+- C++ compiler (e.g: DevC++, g++)
+- MySQL server installed and running
 - MySQL Connector/C++ library
+
+### Installation
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/yourusername/document-management-system.git
+   cd document-management-system
 
 ## Installation
 
@@ -51,11 +68,10 @@ A C++ application for managing documents with MySQL database integration. This s
    ```
 
 ## Usage
-
-Run the compiled program:
-```
-./document_manager
-```
+Create a Document: Select the option to create a document and provide the required details.
+View Documents: Choose the option to view all documents stored in the database.
+Delete Expired Documents: The system will prompt you to delete any documents that have expired.
+Search Documents: Use the search functionality to find documents based on specific criteria.
 
 The main menu provides the following options:
 1. Create a Document
