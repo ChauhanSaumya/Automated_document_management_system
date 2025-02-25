@@ -70,10 +70,6 @@ The main menu provides the following options:
 - `Database.h`: Database connection and query handling
 - `Document.h`: Document class with methods for document operations
 
-## License
-
-[Add your license information here]
-
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
