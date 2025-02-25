@@ -21,7 +21,6 @@ The Automated Document Management System (DMS) is designed to help individuals m
 - **C++ (OOP)**: For implementing the core application logic, including file handling, categorization, and interactions with the database.
 - **MySQL**: For storing document metadata (e.g., title, tags, date) and other related information in a structured manner.
 - **SQL**: For querying and manipulating data within the MySQL database.
-- **Boost Libraries**: For file handling and string manipulations in C++ (optional but useful).
 - **C++ MySQL Connector**: A library (e.g., MySQL Connector/C++) to connect C++ with MySQL for database operations.
 
 ## Installation Instructions
